@@ -1,7 +1,7 @@
 from django.urls import path
 
 from core.views import HomeView, HomilyView, HomilyDetailView, AboutView, AnnouncementView, EventView, SacramentView, \
-    SacramentDetailView
+    SacramentDetailView, OrganizationView
 
 urlpatterns = [
     path('', HomeView.as_view(), name='index'),
@@ -11,5 +11,7 @@ urlpatterns = [
     path('announcements/', AnnouncementView.as_view(), name='announcements'),
     path('events/', EventView.as_view(), name='events'),
     path('sacraments/', SacramentView.as_view(), name='sacraments'),
+    path('readings/', SacramentView.as_view(), name='sacraments'),
     path('sacrament/<str:lb_num>/', SacramentDetailView.as_view(), name='sacrament-detail'),
+    path('group/<str:group>/', OrganizationView.as_view(), name='organization-detail'),
 ]

@@ -65,9 +65,9 @@
               <li class="dropdown"><a href=""><span>Organizations</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a class="nav-link scrollto" href=""></a></li>
-                      <li><a class="nav-link scrollto" href="#pricing">Catholic Men Organization of Nigeria</a></li>
-                      <li><a class="nav-link scrollto" href="#pricing">Catholic Women Organization</a></li>
-                      <li><a class="nav-link scrollto" href="#pricing">Catholic Youth Organization of Nigeria</a></li>
+                      <li><a class="nav-link scrollto" href="{% url 'organization-detail' 'cmo' %}">Catholic Men Organization of Nigeria</a></li>
+                      <li><a class="nav-link scrollto" href="{% url 'organization-detail' 'cwo' %}">Catholic Women Organization</a></li>
+                      <li><a class="nav-link scrollto" href="{% url 'organization-detail' 'cyon' %}">Catholic Youth Organization of Nigeria</a></li>
                 </ul>
               </li>
               <li><a href="#">Lay Apostolic Groups</a></li>
@@ -79,6 +79,7 @@
                   <li><a href="#">Parishioners</a></li>
             </ul>
           </li>
+          <li><button class="btn btn-danger ms-2" href="{% url 'index' %}#portfolio">Login</button></li>
           
 
         </ul>

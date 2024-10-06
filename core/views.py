@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views.generic import TemplateView, DetailView
 
+from core.forms import RegistrationForm
 from core.models import PriestProfile, Homily, Event, Announcement, Sacrament
 from datetime import datetime
 import re
@@ -31,7 +32,27 @@ class AboutView(TemplateView):
         context['page'] = "About"
         return context
 
+# Organization view
+class OrganizationView(TemplateView):
+    template_name = 'inner-page.html'
 
+
+    def get_context_data(self, **kwargs):
+        group = self.kwargs.get('group')
+        form = RegistrationForm()
+        context = super().get_context_data(**kwargs)
+        # context['about'] = "active"
+        context['group'] = group
+        if group == "cwo":
+            context['page'] = "Catholic Women Organization"
+        if group == "cmo":
+            context['page'] = "Catholic Men Organization of Nigeria"
+        if group == "cyon":
+            context['page'] = "Catholic Youth Organization of Nigeria"
+        context['form'] = form
+        return context
+    
+    
 # Blog listing view
 class HomilyView(TemplateView):
     template_name = 'homily.html'

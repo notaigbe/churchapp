@@ -445,3 +445,25 @@ class Event(models.Model):
 
     def __str__(self):
         return f"{self.title} by {self.author.firstname} {self.author.lastname}"
+
+MEMBER_TITLES = (('1', 'Catechist'), ('2', 'Mr.'), ('3', 'Mrs.'), ('4', 'Miss'), ('5', 'Chief'), ('6', 'Dr.'), ('7', 'Pharm.'), ('4', 'Engr.'))    
+GROUP_POSITIONS = (('1', 'President'), ('2', 'Vice President'), ('3', 'Secretary'), ('4', 'Assistant Secretary'), ('5', 'Treasurer'), ('6', 'Financial Secretary'), ('7', 'Assistant Financial Secretary'), ('8', 'Public Relations Officer I'), ('9', 'Public Relations Officer II'), ('10', 'Director of Socials'), ('11', 'Provost'), ('12', 'Member'))
+class GroupMember(models.Model):
+    id = models.AutoField(primary_key=True)  # Field name made lowercase.
+    # username = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    title = models.CharField(max_length=50, choices=MEMBER_TITLES, null=True, blank=True)  # Field name made lowercase.
+    # role = models.CharField(max_length=10, blank=True, null=True, choices=ROLES)  # Field name made lowercase.
+    firstname = models.CharField(max_length=50)  # Field name made lowercase.
+    othernames = models.CharField(max_length=50, null=True, blank=True)  # Field name made lowercase.
+    lastname = models.CharField(max_length=11)  # Field name made lowercase.
+    phone = models.CharField(max_length=11)  # Field name made lowercase.
+    position = models.CharField(max_length=50, choices=GROUP_POSITIONS, null=True, blank=True)  # Field name made lowercase.
+    email = models.EmailField(max_length=60, null=True, blank=True)  # Field name made lowercase.
+    address = models.CharField(max_length=50, null=True, blank=True)  # Field name made lowercase.
+    occupation = models.CharField(max_length=50, null=True, blank=True)  # Field name made lowercase.
+    photo = models.ImageField(upload_to='sfbc/profiles/',
+                              default='sfbc/profiles/default.jpg')  # Field name made lowercase.
+
+
+    def __str__(self):
+        return f"{self.get_title_display()} {self.firstname} {self.lastname}"
