@@ -1,0 +1,49 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<main id="main">
+
+  {% include 'breadcrumbs.html' %}
+
+  <section class="inner-page">
+    <div class="table-responsive" data-aos="fade-up">
+      
+      <table class="table table-bordered table-striped table-hover table-sm table-dark">
+        <thead>
+          <tr>
+            <th scope="col">L.B. Number</th>
+            <th scope="col">Baptismal Name</th>
+            <th scope="col">Other Names</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Baptism</th>
+            <th scope="col">1st Holy Communion</th>
+            <th scope="col">Confirmation</th>
+            <th scope="col">Marriage</th>
+            <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for item in sacrament_register %}
+
+          <tr>
+            <td>{{ item.lb_num }}</td>
+            <td>{{ item.baptismal_name }}</td>
+            <td>{{ item.other_names }}</td>
+            <td>{{ item.surname }}</td>
+            <td>{{ item.date_of_baptism|date:"M d, Y" }}</td>
+            <td>{{ item.date_of_communion|date:"M d, Y" }}</td>
+            <td>{{ item.date_of_confirmation|date:"M d, Y" }}</td>
+            <td>{{ item.date_of_marriage|date:"M d, Y" }}</td>
+            <td><a href="{% url 'sacrament-detail' item.lb_num %}"> <i class="bi bi-box-arrow-in-up-right"></i> </a></td>
+          </tr>
+
+          {% endfor %}
+          </tbody>
+      </table>
+
+      
+    </div>
+  </section>
+
+</main><!-- End #main -->
+
+{% endblock %}

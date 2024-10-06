@@ -1,0 +1,967 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+
+  <div class="container" data-aos="zoom-out" data-aos-delay="100">
+    <div class="row p-2">
+      <div class="col-xl-8 col-lg-8 mb-4 p-10">
+        <h1>Welcome to St. Francis Catholic Church Benin City.</h1>
+        <h2>Constant and Preserving Recourse to Jesus in The Blessed Sacrament in Union with Mary, Queen of the Most
+          Holy Rosary.</h2>
+        <!--          <a href="#about" class="btn-get-started scrollto"> <i class="bi bi-play"></i> Livestream</a>-->
+        <!--          <a href="#about" class="btn-get-started scrollto"> <i class="bi bi-play"></i> Videos</a>-->
+        <a href="{% url 'events' %}" class="btn-get-started scrollto me-3">Upcoming Events</a>
+        <a href="{% url 'announcements' %}" class="btn-get-started scrollto">Announcements</a><br /><br />
+        <a href="https://www.youtube.com/watch?v=u6BOC7CDUTQ" class="glightbox play-btn scrollto"></a>
+      </div>
+      <div class="col-xl-4 col-lg-4 shadow-lg rounded p-3 bg-gradient flex text-center text" data-aos="fade-left"
+        data-aos-delay="100" style="background: rgba(255, 255, 255, 0.2); box-shadow: 0 5px 20px rgba(0, 0, 0, .75);">
+        <h2 style="font-size: 28px;"><i class="fa-solid fa-clock text-white"></i> Sunday Masses: <br>6:30am | 9:00 am
+        </h2><br>
+        <h2 style="font-size: 28px;"><i class="fa-solid fa-clock text-white"></i> Weekday Masses: <br>6:30am | 12:30pm |
+          5:30pm</h2>
+
+      </div>
+    </div>
+
+  </div>
+
+</section><!-- End Hero -->
+
+<main id="main">
+
+
+  <!-- ======= About Section ======= -->
+  <section id="about" class="about section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row no-gutters">
+        <div class="content col-lg-6 col-sm-12 d-flex align-items-stretch">
+          <div class="content">
+            <h3>Our History</h3>
+
+            <p>
+              Curious about the rich history of St. Francis Catholic Church in
+              Benin City? Click the link below to uncover the captivating
+              journey of our beloved parish.
+              <br /><br />
+              Explore the roots that anchor our faith and community. <br />
+              Let's cherish our past as we stride into the future together.
+            </p>
+            <a href="{% url 'about' %}" class="about-btn"><span>Read More</span> <i class="bx bx-chevron-right"></i></a>
+          </div>
+        </div>
+        <div class="content col-lg-6 col-sm-12d-flex align-items-stretch p-3">
+
+          <div class="portfolio-details-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+
+              <div class="swiper-slide">
+                <img src="{% static 'assets/img/Picture2.png' %}" style="width: 100%">
+              </div>
+
+              <div class="swiper-slide">
+                <img src="{% static 'assets/img/Picture3.png' %}" style="width:100%">
+              </div>
+
+              <div class="swiper-slide">
+                <img src="{% static 'assets/img/Picture6b.png' %}" style="width:100%">
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End About Section -->
+
+  <!-- ======= Counts Section ======= -->
+  <section id="counts" class="counts">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+
+        <div class="col-lg-3 col-md-6">
+          <div class="count-box">
+            <i class="bi bi-people"></i>
+            <span data-purecounter-start="0" data-purecounter-end="2862" data-purecounter-duration="1"
+              class="purecounter"></span>
+            <p>Parishioners</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+          <div class="count-box">
+            <i class="bi bi-people"></i>
+            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
+              class="purecounter"></span>
+            <p>Men</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+          <div class="count-box">
+            <i class="bi bi-people"></i>
+            <span data-purecounter-start="0" data-purecounter-end="863" data-purecounter-duration="1"
+              class="purecounter"></span>
+            <p>Women</p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+          <div class="count-box">
+            <i class="bi bi-people"></i>
+            <span data-purecounter-start="0" data-purecounter-end="1478" data-purecounter-duration="1"
+              class="purecounter"></span>
+            <p>Youth/Children</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Counts Section -->
+
+   <!-- ======= Team Section ======= -->
+  <section id="team" class="team section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Priests</h2>
+      </div>
+      <div class="row">
+        {% for priest in priests %}
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="member" data-aos="fade-up" data-aos-delay="100">
+            <div class="member-img">
+              <img src="{% static 'assets/img/obinyan.jpg' %}" class="img-fluid" alt="">
+              <div class="social">
+                <a href="https://shorturl.at/PriAO"><i class="bi bi-facebook"></i></a>
+                <a href="https://shorturl.at/z8Hip"><i class="bi bi-instagram"></i></a>
+                <a href="https://shorturl.at/SjKsg"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info">
+              <h4>{{ priest.get_title_display }} {{ priest.firstname }} {% if priest.othernames %} {{ priest.othernames }} {% endif %} {{ priest.lastname }}</h4>
+              <span>{{ priest.get_position_display }}</span>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="member" data-aos="fade-up" data-aos-delay="200">
+            <div class="member-img">
+              <img src="{% static 'assets/img/emma.jpg' %}" class="img-fluid" alt="">
+              <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info">
+              <h4>Rev. Fr. Egejuru Emmanuel</h4>
+              <span>Assistant Priest</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="member" data-aos="fade-up" data-aos-delay="300">
+            <div class="member-img">
+              <img src="{% static 'assets/img/fr barnabas.jpg' %}" class="img-fluid" alt="">
+              <div class="social">
+                <a href=""><i class="bi bi-twitter"></i></a>
+                <a href=""><i class="bi bi-facebook"></i></a>
+                <a href=""><i class="bi bi-instagram"></i></a>
+                <a href=""><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info">
+              <h4>Rev. Fr. Barnabas Okafor</h4>
+              <span>Priest in Residence</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Team Section -->
+
+  <!-- ======= Portfolio Section ======= -->
+  <section id="portfolio" class="portfolio">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Photo Gallery</h2>
+        <p>Have you ever wanted to take a visual journey through the heart of our parish? Now you can! <br>
+          Introducing our Parish Photo Gallery, a captivating collection of moments that capture the essence of our
+          community. From joyous celebrations to solemn reflections, each photo tells a story of faith, fellowship, and
+          love.</p>
+      </div>
+
+      <div class="row" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <ul id="portfolio-flters">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">Sunday Mass</li>
+            <li data-filter=".filter-card">A Day with the Lord</li>
+            <li data-filter=".filter-web">First Friday</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div class="portfolio-wrap">
+            <img src="{% static 'assets/img/cmo.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>App 1</h4>
+              <p>App</p>
+              <div class="portfolio-links">
+                <a href="{% static 'assets/img/church out.jpg' %}" data-gallery="portfolioGallery"
+                  class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="portfolio-wrap">
+            <img src="{% static 'assets/img/church out.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Web 3</h4>
+              <p>Web</p>
+              <div class="portfolio-links">
+                <a href="{% static 'assets/img/church 3.JPG' %}" data-gallery="portfolioGallery"
+                  class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div class="portfolio-wrap">
+            <img src="{% static 'assets/img/cwo.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>App 2</h4>
+              <p>App</p>
+              <div class="portfolio-links">
+                <a href="{% static 'assets/img/cwo.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                  title="App 2"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+          <div class="portfolio-wrap">
+            <img src="{% static 'assets/img/church in 1.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Card 2</h4>
+              <p>Card</p>
+              <div class="portfolio-links">
+                <a href="{% static 'assets/img/church in 1.jpg' %}" data-gallery="portfolioGallery"
+                  class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="portfolio-wrap">
+            <img src="{% static 'assets/img/church 2.JPG' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Web 2</h4>
+              <p>Web</p>
+              <div class="portfolio-links">
+                <a href="{% static 'assets/img/church 3.JPG' %}" data-gallery="portfolioGallery"
+                  class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div class="portfolio-wrap">
+            <img src="{% static 'assets/img/good friday.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>App 3</h4>
+              <p>App</p>
+              <div class="portfolio-links">
+                <a href="{% static 'assets/img/church friday.jpg' %}" data-gallery="portfolioGallery"
+                  class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+          <div class="portfolio-wrap">
+            <img src="{% static 'assets/img/church out.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Card 1</h4>
+              <p>Card</p>
+              <div class="portfolio-links">
+                <a href="{% static 'assets/img/church out.jpg' %}" data-gallery="portfolioGallery"
+                  class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+          <div class="portfolio-wrap">
+            <img src="{% static 'assets/img/church in 2.jpg' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Card 3</h4>
+              <p>Card</p>
+              <div class="portfolio-links">
+                <a href="{% static 'assets/img/church in 2.jpg' %}" data-gallery="portfolioGallery"
+                  class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="portfolio-wrap">
+            <img src="{% static 'assets/img/church 2.JPG' %}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Web 3</h4>
+              <p>Web</p>
+              <div class="portfolio-links">
+                <a href="{% static 'assets/img/church 2.JPG' %}" data-gallery="portfolioGallery"
+                  class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Portfolio Section -->
+
+  <!-- ======= Services Section ======= -->
+  <section id="services" class="services section-bg ">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Information Centre</h2>
+        <p>We want to ensure everyone stays informed and engaged in the life of our parish. Below are the days and times
+          for various informational sessions:</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+            <i class="fa-solid fa-church"></i>
+            <h4><a href="#">Mass Schedule</a></h4>
+            <p>Sundays & Weekdays - 6:30am | Afternoon mass - 12:30pm</p>
+          </div>
+        </div>
+        <div class="col-md-6 mt-4 mt-md-0">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+            <i class="fa-solid fa-church"></i>
+            <h4><a href="#">Parish Office Hours</a></h4>
+            <p>Monday - Friday : 1pm, 5pm - 6pm</p>
+          </div>
+        </div>
+        <div class="col-md-6 mt-4 mt-md-0">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+            <i class="fa-solid fa-church"></i>
+            <h4><a href="#">Priest Office Hours</a></h4>
+            <p>Tuesday, Wednesday, Thursday 9am-12:30pm</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 mt-4 mt-md-0">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+            <i class="fa-solid fa-person-praying"></i>
+            <h4><a href="#">Confession</a></h4>
+            <p>After every morning mass, Saturdays (5pm-6pm)</p>
+          </div>
+        </div>
+        <div class="col-md-6 mt-4 mt-md-0">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="500">
+            <i class="bi bi-book"></i>
+            <h4><a href="#">Catechism Classes</a></h4>
+            <p>Friday, Saturday, Sunday 3:30pm-5:30pm</p>
+          </div>
+        </div>
+        <div class="col-md-6 mt-4 mt-md-0">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="600">
+            <i class="fa-solid fa-child"></i>
+            <h4><a href="#">Infant Baptism</a></h4>
+            <p>First saturday of every month after morning mass</p>
+          </div>
+        </div>
+        <div class="col-md-6 mt-4 mt-md-0">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="600">
+            <i class="bi bi-people"></i>
+            <h4><a href="#">Marriage Classes</a></h4>
+            <p>Every Friday and Saturday by 4:30pm</p>
+          </div>
+        </div>
+        <div class="col-md-6 mt-4 mt-md-0">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="600">
+            <i class="fa-solid fa-bed"></i>
+            <h4><a href="#">Communion to the Sick</a></h4>
+            <p>Every Sunday after mass or on a call</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Information -->
+
+  <!-- ======= Homilies Section ======= -->
+  <section id="testimonials" class="testimonials">
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Homilies</h2>
+        <p>We invite you to delve deeper into the wisdom shared in our priest's homilies. Below, you'll find key points
+          distilled from recent sermons. <br> Let's continue to reflect and grow together as a community.</p>
+      </div>
+
+      <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper-wrapper">
+          {% for homily in homilies %}
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item"><a href="{% url 'homily-detail' homily.id %}">
+                  <img src="{% static 'assets/img/testimonials/padre 1.jpeg' %}" class="testimonial-img" alt="">
+                  <h3>{{ homily.author.get_title_display }} {{ homily.author.firstname }} {{ homily.author.lastname }}
+                  </h3>
+                  <h4>{{ homily.author.get_position_display }}</h4>
+                  <p class="text-muted">
+                    <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                    {{ homily.content|truncatechars:150 }}...
+                    <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                  </p>
+                </a></div>
+            </div>
+          </div><!-- End Homilies item -->
+          {% endfor %}
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/padre 1.jpeg' %}" class="testimonial-img" alt="">
+                <h3>Fr. Andrew Obinyan</h3>
+                <h4>Parish Priest</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis
+                  quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+          </div><!-- End homily item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/padre 1.jpeg' %}" class="testimonial-img" alt="">
+                <h3>Fr. Andrew Obinyan</h3>
+                <h4>Parish Priest</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim
+                  tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+          </div><!-- End homily item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/padre 1.jpeg' %}" class="testimonial-img" alt="">
+                <h3>Fr. Andrew Obinyan</h3>
+                <h4>Parish Priest</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit
+                  minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+          </div><!-- End homily item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img src="{% static 'assets/img/testimonials/padre 1.jpeg' %}" class="testimonial-img" alt="">
+                <h3>Fr. Andrew Obinyan</h3>
+                <h4>Parish Priest</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa
+                  labore duis sunt culpa nulla illum cillum fugiat esse veniam culpa fore nisi cillum quid.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+          </div><!-- End homily item -->
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+
+  </section><!-- End Homilies -->
+
+
+  <!-- ======= Councils ======= -->
+  <section id="tabs" class="tabs">
+    <div class="container" data-aos="fade-up">
+
+      <ul class="nav nav-tabs row d-flex">
+        <li class="nav-item col-3">
+          <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
+            <i class="bi bi-people"></i>
+            <h4 class="d-none d-lg-block">Laity Council</h4>
+          </a>
+        </li>
+        <li class="nav-item col-3">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
+            <i class="bi bi-people"></i>
+            <h4 class="d-none d-lg-block">Parish Pastoral Council</h4>
+          </a>
+        </li>
+        <li class="nav-item col-3">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
+            <i class="bi bi-people"></i>
+            <h4 class="d-none d-lg-block">Parish Finance Council</h4>
+          </a>
+        </li>
+        <li class="nav-item col-3">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
+            <i class="bi bi-people"></i>
+            <h4 class="d-none d-lg-block">Others</h4>
+          </a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane active show" id="tab-1">
+          <div class="row">
+            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
+              <h3>Some Functions of the Laity Councils</h3>
+              <p class="fst-italic">
+                A Catholic Parish Laity Council, also known as a Pastoral Council, is a consultative body that advises
+                the parish priest or pastor on matters related to the spiritual growth and development of the parish.
+                The functions of a Catholic Parish Laity Council include:
+              </p>
+              <ul>
+                <li><i class="ri-check-double-line"></i> Advising the pastor: The council provides input and advice on
+                  parish matters, such as pastoral planning, budgeting, and community engagement.
+                </li>
+                <li><i class="ri-check-double-line"></i> Fostering community: The council helps build a sense of
+                  community among parishioners, promoting unity and cooperation.
+                </li>
+                <li><i class="ri-check-double-line"></i> Developing parish programs: The council helps plan and
+                  implement programs for spiritual growth, education, and social justice.
+                </li>
+              </ul>
+              <p>
+                As members of our church family, we are all called to work together to build God's kingdom. As the body
+                of Christ, we are all interconnected, and the laity council is an integral part of our church's
+                ministry. By supporting them, we are supporting the growth and well-being of our entire church
+                community.
+                Let us rally behind our laity council, praying for them, attending meetings, and offering our talents
+                and resources. Together, we can achieve great things for God's glory!
+                Remember, every single one of us has a vital role to play in the life of our church. Let us celebrate
+                our unity and work together to further God's mission.
+
+              </p>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 text-center" data-aos="fade-up" data-aos-delay="200">
+              <img src="{% static 'assets/img/church 2.JPG' %}" alt="" class="img-fluid">
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="tab-2">
+          <div class="row">
+            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
+              <h3>Functions of the Parish Pastoral Councils</h3>
+              <p class="fst-italic">
+                A Catholic Parish Laity Council, also known as a Pastoral Council, is a consultative body that advises
+                the parish priest or pastor on matters related to the spiritual growth and development of the parish.
+                The functions of a Catholic Parish Laity Council include:
+              </p>
+              <ul>
+                <li><i class="ri-check-double-line"></i> Advising the pastor: The council provides input and advice on
+                  parish matters, such as pastoral planning, budgeting, and community engagement.
+                </li>
+                <li><i class="ri-check-double-line"></i> Fostering community: The council helps build a sense of
+                  community among parishioners, promoting unity and cooperation.
+                </li>
+                <li><i class="ri-check-double-line"></i> Developing parish programs: The council helps plan and
+                  implement programs for spiritual growth, education, and social justice.
+                </li>
+              </ul>
+              <p>
+                As members of our church family, we are all called to work together to build God's kingdom. As the body
+                of Christ, we are all interconnected, and the laity council is an integral part of our church's
+                ministry. By supporting them, we are supporting the growth and well-being of our entire church
+                community.
+                Let us rally behind our laity council, praying for them, attending meetings, and offering our talents
+                and resources.
+
+              </p>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+              <img src="{% static 'assets/img/church out.jpg' %}" alt="" class="img-fluid">
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="tab-3">
+          <div class="row">
+            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
+              <h3>Functions of the Parish Finance Councils</h3>
+              <p class="fst-italic">
+                A Catholic Parish Laity Council, also known as a Pastoral Council, is a consultative body that advises
+                the parish priest or pastor on matters related to the spiritual growth and development of the parish.
+                The functions of a Catholic Parish Laity Council include:
+              </p>
+              <ul>
+                <li><i class="ri-check-double-line"></i> Advising the pastor: The council provides input and advice on
+                  parish matters, such as pastoral planning, budgeting, and community engagement.
+                </li>
+                <li><i class="ri-check-double-line"></i> Fostering community: The council helps build a sense of
+                  community among parishioners, promoting unity and cooperation.
+                </li>
+                <li><i class="ri-check-double-line"></i> Developing parish programs: The council helps plan and
+                  implement programs for spiritual growth, education, and social justice.
+                </li>
+              </ul>
+              <p>
+                As members of our church family, we are all called to work together to build God's kingdom. As the body
+                of Christ, we are all interconnected, and the laity council is an integral part of our church's
+                ministry. By supporting them, we are supporting the growth and well-being of our entire church
+                community.
+                Let us rally behind our laity council, praying for them, attending meetings, and offering our talents
+                and resources. Together, we can achieve great things for God's glory!
+                Remember, every single one of us has a vital role to play in the life of our church. Let us celebrate
+                our unity and work together to further God's mission.
+
+              </p>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+              <img src="{% static 'assets/img/church in 2.jpg' %}" alt="" class="img-fluid">
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="tab-4">
+          <div class="row">
+            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0" data-aos="fade-up" data-aos-delay="100">
+              <h3>Other functions</h3>
+              <p class="fst-italic">
+                A Catholic Parish Laity Council, also known as a Pastoral Council, is a consultative body that advises
+                the parish priest or pastor on matters related to the spiritual growth and development of the parish.
+                The functions of a Catholic Parish Laity Council include:
+              </p>
+              <ul>
+                <li><i class="ri-check-double-line"></i> Advising the pastor: The council provides input and advice on
+                  parish matters, such as pastoral planning, budgeting, and community engagement.
+                </li>
+                <li><i class="ri-check-double-line"></i> Fostering community: The council helps build a sense of
+                  community among parishioners, promoting unity and cooperation.
+                </li>
+                <li><i class="ri-check-double-line"></i> Developing parish programs: The council helps plan and
+                  implement programs for spiritual growth, education, and social justice.
+                </li>
+              </ul>
+              <p>
+                As members of our church family, we are all called to work together to build God's kingdom. As the body
+                of Christ, we are all interconnected, and the laity council is an integral part of our church's
+                ministry. By supporting them, we are supporting the growth and well-being of our entire church
+                community.
+                Let us rally behind our laity council, praying for them, attending meetings, and offering our talents
+                and resources.
+              </p>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+              <img src="{% static 'assets/img/church in 1.jpg' %}" alt="" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End councils -->
+
+
+
+  <!-- ======= Organization Section ======= -->
+  <section id="pricing" class="pricing section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Organizations</h2>
+        <p>
+          The Men, Women, and Youth Organizations serve as vital pillars of
+          community engagement, spiritual growth, and service.
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-4 col-md-6">
+          <div class="box featured" data-aos="fade-up" data-aos-delay="100">
+            <h3>C.M.O.N.</h3>
+            <img src="{% static 'assets/img/blog/blog-1.jpg' %}" alt="C.M.O.N." class="img-fluid" />
+            <p class="text-start">
+              Calling all gentlemen of faith! <br />
+              <br />
+              The Catholic Men Organization plays a vital role in fostering
+              a community of faith, service, and fraternity among men within
+              the Church. <br />
+              <br />By empowering men to live out their faith with
+              courage and integrity, the organization contributes to the
+              building of a stronger, more vibrant Catholic community grounded
+              in love, compassion, and solidarity.
+            </p>
+            
+            <div class="btn-wrap">
+              <a href="#" class="btn-buy">Join</a>
+            
+            <a href="#" class="btn-buy">
+              Learn More
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
+          <div class="box bg-primary" data-aos="fade-up" data-aos-delay="200">
+            <h3>C.W.O.</h3>
+            <img src="{% static 'assets/img/blog/blog-2.jpg' %}" alt="C.W.O." class="img-fluid" />
+            <p class="text-start">
+              The Catholic Women Organization is a vibrant and integral part
+              of the Catholic community, comprising women who are dedicated to
+              serving their faith, their families, and their communities.
+              Founded on the principles of faith, service, and sisterhood, the
+              C.W.O. provides a platform for women to come together in
+              fellowship, prayer, and action.
+              <br />
+              <br /> The Organization stands as a testament to the power of
+              women's faith, dedication, and service in building a better
+              world guided by the principles of love, compassion, and justice.
+            </p>
+            <div class="btn-wrap">
+              <a href="#" class="btn-buy">Join</a>
+            
+              <a href="#" class="btn-buy">
+              Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+          <div class="box bg-warning" data-aos="fade-up" data-aos-delay="300">
+            <h3>C.Y.O.N.</h3>
+            <img src="{% static 'assets/img/blog/blog-3.jpg' %}" alt="C.Y.O.N." class="img-fluid" />
+            <p class="text-start">
+              The Catholic Youth Organization (C.Y.O.N.) is a dynamic and
+              vibrant organization within the Catholic Church that aims to
+              engage young people in their faith, empower them to live as
+              disciples of Jesus Christ, and inspire them to become leaders in
+              their communities.
+              <br />
+              <br /> Overall, the Catholic Youth Organization plays a vital
+              role in nurturing the faith, leadership, and service of young
+              Catholics, empowering them to live out their faith authentically
+              and to be agents of positive change in the world.
+            </p>
+            <div class="btn-wrap">
+              <a href="#" class="btn-buy">Join</a>
+            
+              <a href="#" class="btn-buy">
+              Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- Organization Section  -->
+
+  <!-- ======= Frequently Asked Questions Section ======= -->
+  <section id="faq" class="faq">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <ul class="faq-list accordion" data-aos="fade-up">
+
+        <li>
+          <a data-bs-toggle="collapse" class="collapsed" data-bs-target="#faq1">How can I get involved in parish
+            ministries or volunteer opportunities? <i class="bx bx-chevron-down icon-show"></i><i
+              class="bx bx-x icon-close"></i></a>
+          <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+            <p>
+              Many parishioners seek ways to actively participate in the life of the parish, whether through liturgical
+              ministries, outreach programs, or community events.
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <a data-bs-toggle="collapse" data-bs-target="#faq2" class="collapsed">What religious education programs are
+            available for children and adults? <i class="bx bx-chevron-down icon-show"></i><i
+              class="bx bx-x icon-close"></i></a>
+          <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+            <p>
+              Families often inquire about options for religious education and formation, including classes for children
+              preparing for sacraments and ongoing faith formation opportunities for adults.
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <a data-bs-toggle="collapse" data-bs-target="#faq3" class="collapsed">How can I request sacraments such as
+            Baptism, Marriage, or Anointing of the Sick? <i class="bx bx-chevron-down icon-show"></i><i
+              class="bx bx-x icon-close"></i></a>
+          <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+            <p>
+              Parishioners may have questions about the process for arranging sacraments for themselves or their loved
+              ones, including requirements and scheduling.
+          </div>
+        </li>
+
+        <li>
+          <a data-bs-toggle="collapse" data-bs-target="#faq4" class="collapsed">What support services does the parish
+            offer for those in need? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-x icon-close"></i></a>
+          <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+            <p>
+              Individuals facing challenges such as illness, bereavement, or financial hardship may seek information
+              about support services available through the parish community.
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <a data-bs-toggle="collapse" data-bs-target="#faq5" class="collapsed">Are there opportunities for spiritual
+            growth and formation available for adults?<i class="bx bx-chevron-down icon-show"></i><i
+              class="bx bx-x icon-close"></i></a>
+          <div id="faq5" class="collapse" data-bs-parent=".faq-list">
+            <p>
+              Individuals may be interested in adult faith formation programs, retreats, or study groups to deepen their
+              understanding of the Catholic faith and grow in their relationship with God.
+            </p>
+          </div>
+        </li>
+
+        <li>
+          <a data-bs-toggle="collapse" data-bs-target="#faq6" class="collapsed">How can I support the parish financially
+            or contribute to specific projects or ministries? <i class="bx bx-chevron-down icon-show"></i><i
+              class="bx bx-x icon-close"></i></a>
+          <div id="faq6" class="collapse" data-bs-parent=".faq-list">
+            <p>
+              Parishioners may inquire about options for giving financially to support the ongoing mission and
+              ministries of the parish, as well as specific fundraising efforts or capital campaigns.
+            </p>
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+  </section><!-- End Frequently Asked Questions Section -->
+
+
+  <!-- ======= Contact Section ======= -->
+  <section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Contact</h2>
+        <p>For more information or enquiries
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="col-lg-6">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="info-box">
+                  <i class="bx bx-map"></i>
+                  <h3>Our Address</h3>
+                  <p>12 College Road, Off Ekehuan Road, Benin City</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box mt-4">
+                  <i class="bx bx-envelope"></i>
+                  <h3>Email Us</h3>
+                  <p>stfrancisbenincity@gmail.com<br>contact@example.com</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box mt-4">
+                  <i class="bx bx-phone-call"></i>
+                  <h3>Call Us</h3>
+                  <p>+234 8282 55488<br>+1 6678 254445 41</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section><!-- End Contact Section -->
+
+</main><!-- End #main -->
+
+{% endblock %}
